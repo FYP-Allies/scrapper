@@ -5,7 +5,8 @@ import { router } from './routes.js';
 
 const startUrls = [
     'https://oladoc.com/pakistan/',
-    'https://oladoc.com/for-doctors'
+    'https://oladoc.com/for-doctors',
+    'https://oladoc.com/pakistan/lahore/condition'
 ];
 
 const crawler = new CheerioCrawler({

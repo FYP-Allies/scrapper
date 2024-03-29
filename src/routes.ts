@@ -6,6 +6,12 @@ router.addDefaultHandler(async ({ enqueueLinks, $,  request, pushData, log }) =>
     const specializations = $("#specialization > option").toArray().map(spec => $(spec).attr('value')).slice(1)
     pushData({  url: request.loadedUrl, specializations, label: 'specialization' })
     
+    $('main > div').toArray().slice(1).forEach(ele => {
+        const specialization = $(ele).find('a').first().text();
+        const conditions = $(ele).find('[data-search]').toArray().map(data => $(data).attr('data-search'))
+        pushData({  url: request.loadedUrl, specialization, conditions, label: 'condition' })
+    });
+    
     log.info(`enqueueing new URLs ${request.loadedUrl}`);
     await enqueueLinks({ globs: ['https://oladoc.com/pakistan/*'], label: 'city' });
 });
