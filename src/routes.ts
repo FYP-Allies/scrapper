@@ -5,13 +5,18 @@ export const router = createCheerioRouter();
 router.addDefaultHandler(async ({ enqueueLinks, $,  request, pushData, log }) => {
     $("#specialization > option").toArray().map(spec => $(spec).attr('value')).slice(1)
     .forEach(specialization => {
-        pushData({  url: request.loadedUrl, specialization, label: 'specialization' })
+        pushData({  url: request.loadedUrl, specialization: specialization?.toLocaleLowerCase(), label: 'specialization' })
     })
     
     $('main > div').toArray().slice(1).forEach(ele => {
         const specialization = $(ele).find('a').first().text();
         const conditions = $(ele).find('[data-search]').toArray().map(data => $(data).attr('data-search'))
-        pushData({  url: request.loadedUrl, specialization, conditions, label: 'condition' })
+        pushData({  
+            url: request.loadedUrl, 
+            specialization: specialization.toLocaleLowerCase(),
+            conditions: conditions.map(c => c?.toLocaleLowerCase()),
+            label: 'condition' 
+        })
     });
     
     log.info(`enqueueing new URLs ${request.loadedUrl}`);
