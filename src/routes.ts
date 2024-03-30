@@ -3,8 +3,10 @@ import { createCheerioRouter } from 'crawlee';
 export const router = createCheerioRouter();
 
 router.addDefaultHandler(async ({ enqueueLinks, $,  request, pushData, log }) => {
-    const specializations = $("#specialization > option").toArray().map(spec => $(spec).attr('value')).slice(1)
-    pushData({  url: request.loadedUrl, specializations, label: 'specialization' })
+    $("#specialization > option").toArray().map(spec => $(spec).attr('value')).slice(1)
+    .forEach(specialization => {
+        pushData({  url: request.loadedUrl, specialization, label: 'specialization' })
+    })
     
     $('main > div').toArray().slice(1).forEach(ele => {
         const specialization = $(ele).find('a').first().text();
