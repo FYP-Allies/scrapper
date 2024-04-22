@@ -1,6 +1,8 @@
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "fs";
 import { assert } from "console";
 
+process.exit(0);
+
 const BASE_PATH = './storage/datasets/default';
 
 const cities = [];
