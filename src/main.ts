@@ -13,7 +13,9 @@ const crawler = new CheerioCrawler({
     // proxyConfiguration: new ProxyConfiguration({ proxyUrls: ['...'] }),
     requestHandler: router,
     // Comment this option to scrape the full website.
-    maxRequestsPerCrawl: 200,
+    maxRequestsPerCrawl: 100000,
+    // to avoid too many parallel requests
+    maxConcurrency: 5,
 });
 
 await crawler.run(startUrls);
