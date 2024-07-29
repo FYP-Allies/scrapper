@@ -1,27 +1,16 @@
-# Crawlee + CheerioCrawler + TypeScript project
+### Oladoc Crawler
 
-This template is a production ready boilerplate for developing with `CheerioCrawler`. Use this to bootstrap your projects using the most up-to-date code.
+A web scrapper to scrap data from `oladoc.com`. see [here](https://github.com/FYP-Allies/scrapper/blob/master/src/main.ts#L6) which pages we scrap.
 
-If you're looking for examples or want to learn more visit:
+**Note:** Consider using a proxy or VPN since they are most probably going to ban your IP after a certain threshold.
 
-- [Tutorial](https://crawlee.dev/docs/guides/cheerio-crawler-guide)
-- [Documentation](https://crawlee.dev/api/cheerio-crawler/class/CheerioCrawler)
-- [Examples](https://crawlee.dev/docs/examples/cheerio-crawler)
+### Usage
 
-## Writing a README
+```bash
+npx pnpm i # install dependencies
+npx pnpm start:dev # start in development
+```
 
-See our tutorial on [writing READMEs for your actors](https://help.apify.com/en/articles/2912548-how-to-write-great-readme-for-your-actors) if you need more inspiration.
+### Appendix
 
-### Table of contents
-
-If your README requires a table of contents, use the template below and make sure to keep the `<!-- toc start -->` and `<!-- toc end -->` markers.
-
-<!-- toc start -->
-- Introduction
-- Use Cases
-    - Case 1
-    - Case 2
-- Input
-- Output
-- Miscellaneous
- <!-- toc end -->
+for deployment details check [`crawlee`](https://crawlee.dev/) library we are using to make this possible.
